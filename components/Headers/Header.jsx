@@ -3,8 +3,13 @@ import React from 'react'
 import { COLORS } from '../../styles/Colors'
 import { Feather } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
-const Header = ( { navigation, navBack } ) =>
+import { useNavigation } from '@react-navigation/native';
+import { useDrawer } from '../../context/DrawerContext';
+
+const Header = ( { navBack, navigation } ) =>
 {
+    const { openDrawer } = useDrawer();
+
     return (
         <View style={ styles.container }>
             <TouchableOpacity style={ styles.menu } onPress={ () => navigation.toggleDrawer() }

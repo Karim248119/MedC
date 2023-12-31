@@ -7,18 +7,20 @@ import Menu from '../../components/Menu'
 import Header from '../../components/Headers/Header'
 import PageTitle from '../../components/PageTitle'
 import ChooseButton from '../../components/Buttons/ChooseButton'
+import { useNavigation } from '@react-navigation/native'
 
 const Book = () =>
 {
+    const Navigate = useNavigation()
     return (
         <View style={ styles.container }>
-            <Header />
+            <Header navBack={ () => Navigate.goBack() } />
             <PageTitle title={ "Choose your \n academic book" } />
             <ScrollView
                 showsVerticalScrollIndicator={ false }
                 contentContainerStyle={ styles.scroll }
             >
-                <ChooseButton title={ 'BUTTON' } />
+                <ChooseButton title={ 'BUTTON' } onPress={ () => Navigate.navigate( 'subject' ) } />
                 <ChooseButton title={ 'BUTTON' } />
                 <ChooseButton title={ 'BUTTON' } />
                 <ChooseButton title={ 'BUTTON' } />

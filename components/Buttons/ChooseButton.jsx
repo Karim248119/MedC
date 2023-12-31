@@ -6,7 +6,10 @@ const ChooseButton = ( { onPress, title } ) =>
 {
     const [ pressed, setPressed ] = useState( false )
     return (
-        <TouchableOpacity onPress={ () => { onPress, setPressed( !pressed ) } } style={ styles.buttonContainer }>
+        <TouchableOpacity on style={ styles.buttonContainer }
+            onPressIn={ () => { setPressed( !pressed ) } }
+            onPressOut={ () => { setPressed( !pressed ) } }
+            onPress={ onPress } >
             <ImageBackground source={ pressed ? require( '../../assets/OrangeGradient.png' ) : null } style={ styles.imageBackground }>
                 <Text style={ styles.buttonText }>{ title }</Text>
             </ImageBackground>

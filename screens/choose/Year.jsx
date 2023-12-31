@@ -7,13 +7,15 @@ import Menu from '../../components/Menu'
 import Header from '../../components/Headers/Header'
 import YearCard from '../../components/Cards/YearCard'
 import PageTitle from '../../components/PageTitle'
+import { useNavigation } from '@react-navigation/native'
 
 const Year = ( { navigation } ) =>
 {
-
+    const Navigate = useNavigation()
     return (
+
         <View style={ styles.container }>
-            <Header navigation={ navigation } />
+            <Header navBack={ () => Navigate.goBack() } navigation={ navigation } />
             <PageTitle title={ "Choose your \n academic year" } />
             <ScrollView
                 showsVerticalScrollIndicator={ false }
@@ -24,6 +26,8 @@ const Year = ( { navigation } ) =>
                     text={ 'The first step' }
                     background={ require( '../../assets/years/bg1.png' ) }
                     img={ require( '../../assets/years/Y1.png' ) }
+                    onPress={ () => Navigate.navigate( { name: 'module', params: navigation, merge: true } ) }
+
                 />
                 <YearCard
                     title={ '2nd Year' }

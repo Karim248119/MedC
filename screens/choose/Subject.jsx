@@ -7,12 +7,14 @@ import Menu from '../../components/Menu'
 import Header from '../../components/Headers/Header'
 import PageTitle from '../../components/PageTitle'
 import ChooseButton from '../../components/Buttons/ChooseButton'
+import { useNavigation } from '@react-navigation/native'
 
 const Subject = () =>
 {
+    const Navigate = useNavigation()
     return (
         <View style={ styles.container }>
-            <Header />
+            <Header navBack={ () => Navigate.goBack() } />
             <PageTitle title={ "Choose your \n academic subject" } />
             <ScrollView
                 showsVerticalScrollIndicator={ false }

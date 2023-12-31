@@ -1,4 +1,4 @@
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { COLORS } from './styles/Colors';
 
 import Onboarding from './screens/Authorization/Onboarding';
@@ -7,13 +7,12 @@ import Login from './screens/Authorization/Login';
 import ForgotPassword from './screens/Authorization/ForgotPassword';
 import NewPassword from './screens/Authorization/NewPassword';
 import PasswordReset from './screens/Authorization/PasswordReset';
-import { MyDrawer } from './DrawerNavigator';
+import NAVIGATOR, { MyDrawer } from './DrawerNavigator';
 import Book from './screens/choose/Book';
 import Module from './screens/choose/Module';
 import Subject from './screens/choose/Subject';
-
-
-
+import Year from './screens/choose/Year';
+import { DrawerProvider } from './context/DrawerContext';
 
 
 
@@ -21,10 +20,12 @@ import Subject from './screens/choose/Subject';
 export default function App ()
 {
   return (
-    <>
-      <StatusBar backgroundColor={ COLORS.black } barStyle={ 'light-content' } />
-      <Subject />
-    </>
+    <DrawerProvider>
+      <SafeAreaView style={ { flex: 1 } }>
+        <StatusBar backgroundColor={ COLORS.black } barStyle={ 'light-content' } />
+        <NAVIGATOR />
+      </SafeAreaView>
+    </DrawerProvider>
   );
 }
 
