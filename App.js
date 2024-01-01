@@ -7,12 +7,12 @@ import Login from './screens/Authorization/Login';
 import ForgotPassword from './screens/Authorization/ForgotPassword';
 import NewPassword from './screens/Authorization/NewPassword';
 import PasswordReset from './screens/Authorization/PasswordReset';
-import NAVIGATOR, { MyDrawer } from './DrawerNavigator';
+import NAVIGATOR, { BoardNavigator, MyDrawer } from './DrawerNavigator';
 import Book from './screens/choose/Book';
 import Module from './screens/choose/Module';
 import Subject from './screens/choose/Subject';
 import Year from './screens/choose/Year';
-import { DrawerProvider } from './context/DrawerContext';
+
 
 
 
@@ -20,12 +20,12 @@ import { DrawerProvider } from './context/DrawerContext';
 export default function App ()
 {
   return (
-    <DrawerProvider>
-      <SafeAreaView style={ { flex: 1 } }>
-        <StatusBar backgroundColor={ COLORS.black } barStyle={ 'light-content' } />
-        <NAVIGATOR />
-      </SafeAreaView>
-    </DrawerProvider>
+
+    <SafeAreaView style={ { flex: 1 } }>
+      <StatusBar backgroundColor={ COLORS.black } barStyle={ 'light-content' } />
+      <MyDrawer />
+    </SafeAreaView>
+
   );
 }
 

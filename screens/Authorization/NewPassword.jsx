@@ -4,13 +4,16 @@ import { COLORS } from '../../styles/Colors'
 import MedButton from '../../components/Buttons/MedButton'
 import SideButton from '../../components/Buttons/SideButton'
 import InputCard from '../../components/Cards/InputCard'
+import { useNavigation } from '@react-navigation/native'
+import { IMAGES } from '../../src/Images'
 
 const NewPassword = () =>
 {
+    const navigation = useNavigation()
     return (
         <View style={ styles.mainContainer } >
             <View style={ styles.logo }>
-                <Image source={ require( '../../assets/logo.png' ) } />
+                <Image source={ IMAGES.logo } />
             </View>
             <ScrollView contentContainerStyle={ styles.container } style={ { flex: 1, } }>
 

@@ -7,6 +7,7 @@ import { Feather } from '@expo/vector-icons';
 import Menu from '../components/Menu'
 import navigationView from './NAV'
 import Header2 from '../components/Headers/Header2'
+import { IMAGES } from '../src/Images'
 
 
 const Dashboard = ( { navigation } ) =>
@@ -18,7 +19,7 @@ const Dashboard = ( { navigation } ) =>
         >
             <Header2 navigation={ navigation } />
             <View style={ styles.content }>
-                <Image source={ require( '../assets/user.png' ) } style={ styles.img } />
+                <Image source={ IMAGES.user } style={ styles.img } />
                 <Text style={ styles.txt1 }>Hi, Eyad.</Text>
                 <View style={ styles.btn }>
                     <TouchableOpacity style={ styles.buttonContainer }>

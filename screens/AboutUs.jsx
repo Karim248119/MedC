@@ -3,6 +3,7 @@ import React from 'react'
 import { COLORS } from '../styles/Colors'
 import Header2 from '../components/Headers/Header2'
 import PageTitle from '../components/PageTitle'
+import { IMAGES } from '../src/Images'
 
 const AboutUs = ( { navigation } ) =>
 {
@@ -19,7 +20,7 @@ const AboutUs = ( { navigation } ) =>
                 </Text>
             </View>
 
-            <Image source={ require( '../assets/AbouUs.png' ) } />
+            <Image source={ IMAGES.aboutus } />
         </View>
     )
 }

@@ -1,11 +1,12 @@
 import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
+import { IMAGES } from '../../src/Images'
 
 const MedButton = ( { onPress, title } ) =>
 {
     return (
         <TouchableOpacity onPress={ onPress } style={ styles.buttonContainer }>
-            <ImageBackground source={ require( '../../assets/OrangeGradient.png' ) } style={ styles.imageBackground }>
+            <ImageBackground source={ IMAGES.btnBackground } style={ styles.imageBackground }>
                 <Text style={ styles.buttonText }>{ title }</Text>
             </ImageBackground>
         </TouchableOpacity>

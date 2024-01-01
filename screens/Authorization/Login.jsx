@@ -4,13 +4,16 @@ import { COLORS } from '../../styles/Colors'
 import MedButton from '../../components/Buttons/MedButton'
 import SideButton from '../../components/Buttons/SideButton'
 import InputCard from '../../components/Cards/InputCard'
+import { useNavigation } from '@react-navigation/native'
+import { IMAGES } from '../../src/Images'
 
 const Login = () =>
 {
+    const navigation = useNavigation()
     return (
         <View style={ styles.mainContainer }>
             <View style={ styles.logo }>
-                <Image source={ require( '../../assets/logo.png' ) } />
+                <Image source={ IMAGES.logo } />
             </View>
             <ScrollView style={ styles.container } contentContainerStyle={ { alignItems: 'center', gap: 50 } }>
                 <View style={ styles.inputsContainer }>
@@ -18,14 +21,13 @@ const Login = () =>
                     <View>
                         <InputCard icon={ "lock" } placeholder={ 'Password' } />
                         <View style={ { alignSelf: 'flex-end', marginHorizontal: 10 } }>
-                            <SideButton title={ 'Forgot password' } />
+                            <SideButton title={ 'Forgot password' } onPress={ () => navigation.navigate( 'ForgotPassword' ) } />
                         </View>
                     </View>
-
                 </View>
                 <View style={ styles.btn }>
                     <MedButton title={ 'Log in' } />
-                    <SideButton text={ 'Don’t have an account?' } title={ 'SIGN UP' } />
+                    <SideButton text={ 'Don’t have an account?' } title={ 'SIGN UP' } onPress={ () => navigation.navigate( 'SignUp' ) } />
                 </View>
             </ScrollView>
         </View>

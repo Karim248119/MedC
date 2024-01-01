@@ -3,6 +3,7 @@ import React from 'react'
 import { COLORS } from '../../styles/Colors'
 import { Feather } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
+import { IMAGES } from '../../src/Images';
 const Header2 = ( { navigation } ) =>
 {
     return (
@@ -12,7 +13,7 @@ const Header2 = ( { navigation } ) =>
                 <Feather name="menu" size={ 30 } color={ COLORS.white } />
             </TouchableOpacity>
             <View style={ styles.logo }>
-                <Image source={ require( '../../assets/logo.png' ) } style={ { width: 25, height: 25 } } />
+                <Image source={ IMAGES.logo } style={ { width: 25, height: 25 } } />
                 <Text style={ styles.logoTxt }>medc</Text>
             </View>
         </View>

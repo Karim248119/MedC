@@ -4,14 +4,17 @@ import React from 'react'
 import MedButton from '../../components/Buttons/MedButton'
 import SideButton from '../../components/Buttons/SideButton'
 import { COLORS } from '../../styles/Colors'
+import { useNavigation } from '@react-navigation/native'
+import { IMAGES } from '../../src/Images'
 
 const PasswordReset = () =>
 {
+    const navigation = useNavigation()
     return (
         <SafeAreaView
             style={ styles.container }
         >
-            <Image source={ require( '../../assets/Locker.png' ) } style={ styles.img } />
+            <Image source={ IMAGES.locker } style={ styles.img } />
             <View>
                 <Text style={ styles.txt1 }>Password Reset</Text>
                 <Text style={ styles.txt2 }>Your password has been successfully reset.</Text>

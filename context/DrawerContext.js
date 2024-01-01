@@ -1,37 +1,18 @@
-import React, { createContext, useContext, useRef } from 'react';
+import React, { createContext, useContext, useRef, useState } from 'react';
 
-const DrawerContext = createContext( null );
+const GlobalContext = createContext( null );
 
-export const DrawerProvider = ( { children } ) =>
+export const GlobalContextProvider = ( { children } ) =>
 {
-    const drawerRef = useRef( null );
-
-    const setDrawerRef = ( ref ) =>
-    {
-        drawerRef.current = ref;
-    };
-
-    const openDrawer = () =>
-    {
-        if ( drawerRef.current && drawerRef.current.openDrawer )
-        {
-            drawerRef.current.openDrawer();
-        }
-    };
-
+    const [ Loggedin, setLoggedin ] = useState( true )
     return (
-        <DrawerContext.Provider value={ { setDrawerRef, openDrawer } }>
+        <GlobalContext.Provider value={ { Loggedin, setLoggedin } }>
             { children }
-        </DrawerContext.Provider>
+        </GlobalContext.Provider>
     );
 };
 
-export const useDrawer = () =>
+export const useGlobalContext = () =>
 {
-    const context = useContext( DrawerContext );
-    if ( !context )
-    {
-        throw new Error( 'useDrawer must be used within a DrawerProvider' );
-    }
-    return context;
+    return useContext( GlobalContext );
 };

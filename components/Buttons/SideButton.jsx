@@ -2,12 +2,12 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { COLORS } from '../../styles/Colors'
 
-const SideButton = ( { text, title, onpress } ) =>
+const SideButton = ( { text, title, onPress } ) =>
 {
     return (
         <View style={ styles.container }>
             { text && <Text style={ styles.txt }>{ text }</Text> }
-            <TouchableOpacity onPress={ onpress }>
+            <TouchableOpacity onPress={ onPress }>
                 <Text style={ styles.title }>{ title }</Text>
             </TouchableOpacity>
         </View>

@@ -8,6 +8,7 @@ import Header from '../../components/Headers/Header'
 import YearCard from '../../components/Cards/YearCard'
 import PageTitle from '../../components/PageTitle'
 import { useNavigation } from '@react-navigation/native'
+import { IMAGES } from '../../src/Images'
 
 const Year = ( { navigation } ) =>
 {
@@ -24,22 +25,22 @@ const Year = ( { navigation } ) =>
                 <YearCard
                     title={ '1st Year' }
                     text={ 'The first step' }
-                    background={ require( '../../assets/years/bg1.png' ) }
-                    img={ require( '../../assets/years/Y1.png' ) }
+                    background={ IMAGES.bgOrange }
+                    img={ IMAGES.bookOrange }
                     onPress={ () => Navigate.navigate( { name: 'module', params: navigation, merge: true } ) }
 
                 />
                 <YearCard
                     title={ '2nd Year' }
                     text={ 'One step forward' }
-                    background={ require( '../../assets/years/bg2.png' ) }
-                    img={ require( '../../assets/years/Y2.png' ) }
+                    background={ IMAGES.bgBlue }
+                    img={ IMAGES.bookBlue }
                 />
                 <YearCard
                     title={ '3rd Year' }
                     text={ 'One step forward' }
-                    background={ require( '../../assets/years/bg3.png' ) }
-                    img={ require( '../../assets/years/Y3.png' ) }
+                    background={ IMAGES.bgGreen }
+                    img={ IMAGES.bookGreen }
                 />
             </ScrollView>
         </View>

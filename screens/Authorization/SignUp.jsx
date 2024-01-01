@@ -4,13 +4,18 @@ import { COLORS } from '../../styles/Colors'
 import MedButton from '../../components/Buttons/MedButton'
 import SideButton from '../../components/Buttons/SideButton'
 import InputCard from '../../components/Cards/InputCard'
+import { useNavigation } from '@react-navigation/native'
+import { IMAGES } from '../../src/Images'
+
 
 const SignUp = () =>
 {
+    const navigation = useNavigation()
+
     return (
         <SafeAreaView style={ styles.mainContainer }>
             <View style={ styles.logo }>
-                <Image source={ require( '../../assets/logo.png' ) } />
+                <Image source={ IMAGES.logo } />
             </View>
             <ScrollView contentContainerStyle={ styles.container }>
                 <View style={ styles.inputsContainer }>
@@ -22,7 +27,7 @@ const SignUp = () =>
                 </View>
                 <View style={ styles.btn }>
                     <MedButton title={ 'SIGN UP' } />
-                    <SideButton text={ 'Already have an account?' } title={ 'Log in' } />
+                    <SideButton text={ 'Already have an account?' } title={ 'Log in' } onPress={ () => navigation.navigate( 'Login' ) } />
                 </View>
             </ScrollView>
         </SafeAreaView>

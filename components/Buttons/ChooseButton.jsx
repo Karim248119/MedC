@@ -1,6 +1,7 @@
 import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import { COLORS } from '../../styles/Colors'
+import { IMAGES } from '../../src/Images'
 
 const ChooseButton = ( { onPress, title } ) =>
 {
@@ -10,7 +11,7 @@ const ChooseButton = ( { onPress, title } ) =>
             onPressIn={ () => { setPressed( !pressed ) } }
             onPressOut={ () => { setPressed( !pressed ) } }
             onPress={ onPress } >
-            <ImageBackground source={ pressed ? require( '../../assets/OrangeGradient.png' ) : null } style={ styles.imageBackground }>
+            <ImageBackground source={ pressed ? IMAGES.btnBackground : null } style={ styles.imageBackground }>
                 <Text style={ styles.buttonText }>{ title }</Text>
             </ImageBackground>
         </TouchableOpacity>

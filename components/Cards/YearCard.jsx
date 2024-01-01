@@ -1,4 +1,4 @@
-import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, ImageBackground, Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { COLORS } from '../../styles/Colors'
 
@@ -7,7 +7,10 @@ const YearCard = ( { onPress, title, text, img, background } ) =>
     return (
         <View style={ styles.container }>
             <View>
-                <Image source={ img } style={ styles.img } />
+                <TouchableOpacity onPress={ onPress } style={ { zIndex: 20, } }>
+                    <Image source={ img } style={ styles.img } />
+                </TouchableOpacity>
+
                 <TouchableOpacity onPress={ onPress } style={ styles.buttonContainer }>
                     <ImageBackground source={ background } style={ styles.imageBackground }>
                         <Text style={ styles.topTxt }>{ text }</Text>
@@ -44,7 +47,7 @@ const styles = StyleSheet.create( {
         position: 'absolute',
         top: -60,
         right: -10,
-        zIndex: 20,
+
         width: 189,
         height: 142,
     },
