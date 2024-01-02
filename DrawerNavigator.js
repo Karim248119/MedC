@@ -33,7 +33,7 @@ import PasswordReset from './screens/Authorization/PasswordReset';
 const Loggedin = true;
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
-
+const mohammed = 0;
 export function MyDrawer() {
   return (
     <NavigationContainer>
