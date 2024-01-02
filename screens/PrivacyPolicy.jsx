@@ -9,7 +9,7 @@ const PrivacyPolicy = ( { navigation } ) =>
     return (
         <View style={ styles.container }>
             <Header2 navigation={ navigation } />
-            <PageTitle title={ 'Privacy Policy' } />
+            <PageTitle title={ "Privacy Policy" } />
         </View>
     )
 }
