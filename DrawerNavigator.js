@@ -29,6 +29,9 @@ import Onboarding from './screens/Authorization/Onboarding';
 import ForgotPassword from './screens/Authorization/ForgotPassword';
 import NewPassword from './screens/Authorization/NewPassword';
 import PasswordReset from './screens/Authorization/PasswordReset';
+import MCQscreen from './screens/choose/MCQscreen';
+import CarouselComponent from './screens/slider';
+import MCQs from './components/MCQs';
 
 const Loggedin = true;
 const Drawer = createDrawerNavigator();
@@ -136,6 +139,7 @@ export default function NAVIGATOR() {
       <Stack.Screen name="module" component={Module} />
       <Stack.Screen name="book" component={Book} />
       <Stack.Screen name="subject" component={Subject} />
+      <Stack.Screen name="mcq" component={MCQscreen} />
     </Stack.Navigator>
   );
 }

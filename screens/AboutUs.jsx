@@ -2,7 +2,7 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {COLORS} from '../styles/Colors';
 import Header2 from '../components/Headers/Header2';
-import PageTitle from '../components/PageTitle';
+import PageTitle from '../components/titles/PageTitle';
 import {IMAGES} from '../src/Images';
 
 const AboutUs = ({navigation}) => {
